@@ -1,5 +1,5 @@
 <?php
-
+header('Access-Control-Allow-Origin: *'); 
 $db = mysqli_connect(
     $_ENV['DB_HOST'],
     $_ENV['DB_USER'], 
