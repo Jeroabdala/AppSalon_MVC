@@ -22,14 +22,15 @@ class Email {
          // create a new object
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = 'b22c0b3557dc7f';
-        $mail->Password = '18e74cb08dc703';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 993;
+        $mail->Username = 'laveti122@gmail.com';
+        $mail->Password = 'LaVetyContrasena12345678';
      
-         $mail->setFrom('cuentas@appsalon.com');
-         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+         $mail->setFrom('laveti122@gmail.com');
+         $mail->addAddress($this->email);
          $mail->Subject = 'Confirma tu Cuenta';
 
          // Set HTML
@@ -44,6 +45,7 @@ class Email {
          $mail->Body = $contenido;
 
          //Enviar el mail
+      
          $mail->send();
 
     }
